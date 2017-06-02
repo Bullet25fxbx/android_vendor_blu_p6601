@@ -16,49 +16,10 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),porridge)
+ifeq ($(TARGET_DEVICE),p6601)
 ifeq ($(MTKPATH),)
 
 # Proprietary Modules go here
-include $(CLEAR_VARS)
-LOCAL_MODULE := MTKLogger
-LOCAL_MODULE_OWNER := mts
-LOCAL_SRC_FILES := proprietary/app/MTKLogger/MTKLogger.apk
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_CLASS := APPS
-LOCAL_CERTIFICATE := platform
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := YGPS
-LOCAL_MODULE_OWNER := mts
-LOCAL_SRC_FILES := proprietary/app/YGPS/YGPS.apk
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_CLASS := APPS
-LOCAL_CERTIFICATE := platform
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := libaudiopolicymanager
-LOCAL_MODULE_OWNER := mts
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MULTILIB := 32
-LOCAL_SRC_FILES_32 := proprietary/lib/libaudiopolicymanager.so
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := libaudiopolicymanager
-LOCAL_MODULE_OWNER := mts
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MULTILIB := 64
-LOCAL_SRC_FILES_64 := proprietary/lib64/libaudiopolicymanager.so
-include $(BUILD_PREBUILT)
 
 endif
 endif
